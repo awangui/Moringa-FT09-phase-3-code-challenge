@@ -68,20 +68,20 @@ class Article:
             if magazine["id"] == self.magazine_id:
                 return magazine
         return None
-        @property
-        def title(self):
-            return self._title
+    @property
+    def title(self):
+        return self._title
 
-        @title.setter
-        def title(self, value):
-            if not isinstance(value, str) or not (5 <= len(value) <= 50):
-                raise ValueError("title must be a string with 5 to 50 characters.")
-            self._title = value
+    @title.setter
+    def title(self, value):
+        if not isinstance(value, str) or not (5 <= len(value) <= 50):
+            raise ValueError("title must be a string with 5 to 50 characters.")
+        self._title = value
 
-        @property
-        def author(self):
-            return Author.find_by_id(self.author_id)
+    @property
+    def author(self):
+        return Author.find_by_id(self.author_id)
 
-        @property
-        def magazine(self):
-            return Magazine.find_by_id(self.magazine_id)
+    @property
+    def magazine(self):
+        return Magazine.find_by_id(self.magazine_id)
